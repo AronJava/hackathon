@@ -3,8 +3,8 @@
     <img class="logo" src="./assets/images/logo.png"/>
     <div class="nav-box">
      <ul class="nav">
-       <router-link :to = '{path:"/home"}' tag="li" event="mouseover">文章</router-link>
-       <router-link  :to = '{path:"/document"}' active-class="a" tag="li">生活</router-link>
+       <router-link :to = '{path:"/article"}' tag="li" event="mouseover">文章</router-link>
+       <router-link  :to = '{path:"/post"}' active-class="a" tag="li">帖子</router-link>
        <router-link  to="/person" tag="li">活动</router-link>
        <router-link  to="/user" tag="li">我的</router-link>
     </ul>
@@ -22,6 +22,7 @@
 </template>
 <script>
 export default {
+  
   name:"app",
   data(){
     return {

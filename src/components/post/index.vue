@@ -6,10 +6,10 @@
 </template>
 <script>
 export default {
-    name:"docuemnt",
+    name:"post",
     methods:{
         click(){
-            window.location.href = "/docuemnt#maodian";
+            window.location.href = "/post#maodian";
         }
     }
 }

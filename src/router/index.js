@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
-import document from '@/components/document'
-import person from '@/components/person'
-import ing from '@/components/person/children/ing'
-import learn from '@/components/person/children/learn'
-import work from '@/components/person/children/work'
+import article from '@/components/article/index'
+import post from '@/components/post/index'
+import activity from '@/components/activity/index'
+import ing from '@/components/activity/children/ing'
+import learn from '@/components/activity/children/learn'
+import work from '@/components/activity/children/work'
 import error from '@/components/error'
 import user from '@/components/user'
-import slides from '@/components/slides'
+import slides from '@/components/post/slides'
 Vue.use(Router)
 
 export default new Router({
@@ -26,11 +26,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: "/home"
+      redirect: "/article"
     },{
-      path: '/home',
-      name:"home",
-      component: home,
+      path: '/article',
+      name:"article",
+      component: article,
       beforeEnter(to,from,next){
         next();
       },
@@ -38,29 +38,29 @@ export default new Router({
         index:0
       }
     },{
-      path:'/document',
-      name:"document",
+      path:'/post',
+      name:"post",
       components:{
-        default:document,
+        default:post,
         slides:slides
       },
       meta:{
         index:1
       }
     },{
-      path: '/person',
-      component: person,
+      path: '/activity',
+      component: activity,
       children:[
         {
           path:"",
-          name:"person",
-          component: ing,
+          name:"activity",
+          component: activity,
           meta:{
             index:2
           }
         },
         {
-          path:"study",
+          path:"ing",
           component: ing,
         },{
           path:"learn",
