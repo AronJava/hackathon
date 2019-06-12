@@ -1,0 +1,92 @@
+/* @import './home.css';
+@import './document.css';
+@import './person.css'; */
+
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration:none;
+    color:#fff;
+}
+.nav{
+    list-style:none;
+}
+.nav li{
+    float:left;
+    width: 25%;
+    height:30px;
+    text-align:center;
+    background:rgb(241, 1, 128);
+    cursor:pointer;
+}
+.active{
+    color:yellow;
+}
+.a{
+    color:orange;
+}
+.center{
+    text-align: center;
+    width:100%;
+    font-size:50px;
+    position: absolute;
+    top:200px;
+}
+
+.v-enter{
+    opacity:0;
+}
+.v-enter-to{
+    opacity:1;
+}
+.v-enter-active{
+    transition:opacity 1s ease-in-out;
+}
+.v-leave{
+    opacity: 1;
+}
+.v-leave-to{
+    opacity: 0;
+}
+.v-leave-active{
+    transition:opacity 1s ease-out;
+}
+.left-enter{
+    transform:translateX(100%);
+}
+.left-enter-to{
+    transform: translateX(0%);
+}
+.left-enter-active{
+    transition:transform 1s ease-in;
+}
+.left-leave{
+    transform: translateX(0);
+}
+.left-leave-to{
+    transform: translateX(-100%);
+}
+.left-leave-active{
+    transition:transform 1s ease-out;
+}
+
+.right-enter{
+    transform:translateX(-100%);
+}
+.right-enter-to{
+    transform: translateX(0%);
+}
+.right-enter-active{
+    transition:transform 1s ease-in;
+}
+.right-leave{
+    transform: translateX(0);
+}
+.right-leave-to{
+    transform: translateX(100%);
+}
+.right-leave-active{
+    transition:transform 1s ease-out;
+}
