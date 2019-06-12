@@ -1,5 +1,5 @@
 <template>
     <div>
-        我是slide页面
+        slide页面，嵌入document生活页面
     </div>
 </template>

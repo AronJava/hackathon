@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        我是home组件
+        前人栽树后人乘凉！
     </div>
 </template>
 

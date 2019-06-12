@@ -1,9 +1,9 @@
 <template>
   <div class="person">
     <ul>
-       <router-link :to='{path:"/person/study"}' tag="li" exact><i class="fa fa-home"></i>study</router-link>
-       <router-link  :to='{path:"/person/learn"}' tag="li">learn</router-link>
-       <router-link  to="/person/work" tag="li">work</router-link>
+       <router-link :to='{path:"/person/ing"}' tag="li" exact><i class="fa fa-home"></i>活动ing</router-link>
+       <router-link  :to='{path:"/person/learn"}' tag="li">活动ed</router-link>
+       <!-- <router-link  to="/person/work" tag="li">work</router-link> -->
      </ul>
       <router-view class="center"></router-view>
   </div>

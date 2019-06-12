@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import home from '@/components/home'
 import document from '@/components/document'
 import person from '@/components/person'
-import study from '@/components/person/children/study'
+import ing from '@/components/person/children/ing'
 import learn from '@/components/person/children/learn'
 import work from '@/components/person/children/work'
 import error from '@/components/error'
@@ -54,14 +54,14 @@ export default new Router({
         {
           path:"",
           name:"person",
-          component: study,
+          component: ing,
           meta:{
             index:2
           }
         },
         {
           path:"study",
-          component: study,
+          component: ing,
         },{
           path:"learn",
           component: learn,
