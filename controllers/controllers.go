@@ -24,6 +24,8 @@ var Routers = map[string]http.HandlerFunc{
 	"/paper/update": paper.Update,
 	// 添加评论
 	"/paper/add": paper.Add,
+	// 上传图片
+	"/paper/uplod": paper.GenerateImg,
 	// 报名
 	"/signup/checkin": signup.CheckIn,
 	// 个人信息
