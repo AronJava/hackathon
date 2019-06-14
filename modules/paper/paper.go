@@ -85,3 +85,17 @@ func GetInfoByType(eventType int) ([]Event, error) {
 	return events, err
 
 }
+
+//根据id获取event
+func GetPaperByid(id int) Event {
+	var event Event
+	utils.Engine.Where("id = ?", id).Get(&event)
+	return event
+}
+
+//根据uid获取信息
+func GetPapersByUid(id int) []Event {
+	events := make([]Event, 0)
+	utils.Engine.Where("uid = ?", id).Find(&events)
+	return events
+}

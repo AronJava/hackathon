@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"hackathon/controllers/bulletscreen"
+	"hackathon/controllers/admin"
 )
 
 // Routers 路由
@@ -19,6 +20,10 @@ var Routers = map[string]http.HandlerFunc{
 	"/paper/signup": Paper.Signup,
 	// 个人信息
 	"/admin/index": Admin.Index,
+	//我的贴子
+	"/admin/paper": admin.Paper,
+	//我的收藏
+	"/admin/collection": admin.Collection,
 	//登陆
 	"/account/login": account.Login,
 	//注册
