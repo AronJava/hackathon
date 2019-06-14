@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <script src="/static/jquery.min.js"></script>
+        <script>
+            window.onload = function(){
+                var width = $(".bomb_show").width();
+                var height = $(".bomb_show").height();
+                var conn;
+                var getRandomColor = function() {
+                    return '#'+((Math.random() * 0x1000000 << 0).toString(16))
+                };
+
+                if (window["WebSocket"]) {
+                    conn = new WebSocket("ws://" + document.location.host + "/ws");
+                    conn.onmessage = function (evt) {
+                        var message = evt.data;
+                        var $spannode = $('<div class="text">'+message+'</div>');
+                        spanheight = (height-20)*Math.random()
+                        $spannode.css({
+                                        top:spanheight,
+                                        color:getRandomColor()
+                                    });
+                        $(".bomb_show").append($spannode);
+                        $spannode.animate({left:"20px"},10000,function(){
+                                        $(this).remove();
+                                    });
+                    }
+                }
+                var send = function() {
+                    var content = $(".b_txt").val();
+                    $(".b_txt").val("");
+                    if(!conn) {
+                        return false;
+                    }
+                    if(!content) {
+                        return false;
+                    }
+                    conn.send(content);
+                }
+            $(".b_txt").keypress(function(event){
+                         if (event.keyCode == "13") {
+                                          $(".b_send").trigger('click');
+                                      }
+                    });
+            $(".b_send").click(function(){
+                        send();
+                    });
+            $(".b_del").click(function(){
+                        $(".bomb_show").empty();
+                    });
+            };
+        </script>
+        <style>
+            .bomb {
+                width: 100%;
+                height: 380px;
+            }
+            .bomb_show {
+                height: 100%;
+                width: 100%;
+                margin: 10px;
+                border: 1px solid rgb(255,168,0);
+            }
+            .send_bomb {
+                margin: 20px;
+                text-align: center;
+            }
+            .b_txt {
+                width: 400px;
+                height: 40px;
+                border-radius: 3px;
+                border: 1px solid gray;
+            }
+            .btn_div {
+                margin-top: 10px;
+            }
+            .b_send {
+                border: 1px solid red;
+                color: red;
+                padding: 0;
+                border-radius: 3px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 15px;
+                width: 200px;
+                background-color: white;
+            }
+            .b_del {
+                border: 1px solid gray;
+                color: gray;
+                padding: 0;
+                border-radius: 3px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 15px;
+                width: 200px;
+                background-color: white;
+            }
+            div.text {
+                position: absolute;
+                right: 20px;
+                font-size: 15px;
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <div class="bomb">
+                <div class="bomb_show"></div>
+            </div>
+            <div class="send_bomb">
+                <input class="b_txt" type="text" placeholder="想说点什么嘛" />
+                <div class="btn_div">
+                    <input class="b_send" type="button" value="发射"/>
+                    <input class="b_del" type="button" value="清屏"/>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
