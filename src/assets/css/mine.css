@@ -1,0 +1,100 @@
+.mine{
+    width:100%;
+    height: 7rem;
+    background: #eee;
+}
+.mine .mine_avator{
+    position: absolute;
+    top:0.5rem;
+    left:50%;
+    transform: translateX(-50%);
+    width:1.5rem;
+    height:1.5rem;
+}
+.mine .disc div{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.mine .disc .name{
+    top: 2.2rem;
+    font-size: 0.17rem;
+    color: #262626;
+}
+.mine .disc .nicheng{
+    color: #fa4619;
+    font-size: 0.12rem;
+    top: 2.5rem;
+}
+.mine .disc .disc_msg{
+    color: #999;
+    font-size: 0.08rem;
+    top: 2.75rem;
+}
+.mine .msg{
+    position: absolute;
+    left: 50%;
+    width: 3.6rem;
+    height: 0.64rem;
+    border-radius: 0.08rem;
+    -webkit-box-shadow: 0rem 0.03rem 0.05rem #ccc;
+    box-shadow: 0rem 0.03rem 0.05rem #ccc;
+    margin-top: 0.25rem;
+    background: #fff;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    line-height: 0.64rem;
+    font-size: 0.15rem;
+
+}
+.mine .msg1{
+    top: 3rem;
+}
+.mine .msg2{
+    top: 3.75rem;
+}
+.mine .msg3{
+    top: 4.5rem;
+}
+.mine .msg4{
+    top: 5.25rem;
+}
+.mine .msg .iconl{
+    display: inline-block;
+    width: 0.25rem;
+    height: 0.2rem;
+    margin-left: 0.16rem;
+    margin-right: 0.2rem;
+    vertical-align: -0.04rem;
+}
+.mine .msg1 .iconl{
+    background: url(../images/mine_icon1.png) no-repeat;
+    background-size:100% 100%;
+}
+.mine .msg2 .iconl{
+    background: url(../images/mine_icon2.png) no-repeat;
+    background-size:100% 100%;
+}
+.mine .msg3 .iconl{
+    background: url(../images/mine_icon3.png) no-repeat;
+    background-size:100% 100%;
+}
+.mine .msg4 .iconl{
+    background: url(../images/mine_icon4.png) no-repeat;
+    background-size:100% 100%;
+}
+.mine .msg .iconr{
+    position: absolute;
+    top: 0.28rem;
+    right: 0.2rem;
+    width: 0.1rem;
+    height: 0.1rem;
+    border-top: 1px solid #fca28c;
+    border-left: 1px solid #fca28c;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}

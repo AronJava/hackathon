@@ -13,6 +13,33 @@
         </ul> -->
 
         <img src="https://event.ncfwx.com/upload/image/20190614/21-15-mineAva_03.png" class="mine_avator" alt="">
+        <div class="disc">
+            <div class="name">强叔</div>
+            <div class="nicheng">昵称：<span>微甜中年</span></div>
+            <div class="disc_msg">承接下水道清理，承重墙加固，清洗油烟机等项目</div>
+        </div>
+        <div>
+            <div class="msg msg1">
+                <i class="iconl"></i>
+                我的帖子
+                <i class="iconr"></i>
+            </div>
+            <div class="msg msg2">
+                <i class="iconl"></i>
+                我的评论
+               <i class="iconr"></i>
+            </div>
+            <div class="msg msg3">
+                <i class="iconl"></i>
+                我的收藏
+               <i class="iconr"></i>
+            </div>
+            <div class="msg msg4">
+                <i class="iconl"></i>
+                退出登录
+               <i class="iconr"></i>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -29,26 +56,26 @@ export default {
     beforeRouteEnter(to,from,next){
         console.log(this);
         next((vm)=>{
-            console.log(vm)
+            // console.log(vm)
         });
     },
     watch:{
         $route(){
-            this.getData();
+            // this.getData();
         }
     },
     mounted(){
-        this.getData();
+        // this.getData();
     },
     methods:{
-        getData(){
-            let index = this.$route.params.id;//当前路由的信息，$router是挣整个路由的信息
-            this.userList.forEach((item)=>{
-                if(item.id == index){
-                    this.userInfo = this.userList[index-1];
-                }
-            })
-        }
+        // getData(){
+        //     let index = this.$route.params.id;//当前路由的信息，$router是挣整个路由的信息
+        //     this.userList.forEach((item)=>{
+        //         if(item.id == index){
+        //             this.userInfo = this.userList[index-1];
+        //         }
+        //     })
+        // }
     }
 }
 

@@ -1,6 +1,10 @@
 <template>
   <div class="article">
     <div class="crousel">
+     <!-- <slider :pages="pages" :sliderinit="sliderinit" @slide='slide' @tap='onTap' @init='onInit'>
+        <div slot="loading">loading...</div>
+      </slider> -->
+
        <!-- Swiper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
@@ -15,7 +19,7 @@
       </div>
     </div>
     <div class="activity">
-      <div class="item btn2"><img src="../../assets/images/btn2_bg.png" alt=""><span>精彩活动</span></div>
+      <div class="item btn2" @click="tiezi"><img src="../../assets/images/btn2_bg.png" alt=""><span>精彩活动</span></div>
       <div class="item btn3"><img src="../../assets/images/btn3_bg.png" alt=""><span>日常生活</span></div>
       <div class="item btn4"><img src="../../assets/images/btn4_bg.png" alt=""><span>技术大咖</span></div>
     </div>
@@ -85,7 +89,7 @@
 
 <script>
 import { fetchGet,fetchPost } from '@/utils/fetch';
-import Swiper from '@/utils/swiper.min.js'
+import slider from 'vue-concise-slider'
 
 export default {
   created() {
@@ -97,15 +101,61 @@ export default {
       return {
         avator: '',
         dataYang:'2019.06.15',
-        dataYin:'农历五月十三'
+        dataYin:'农历五月十三',
+        //图片列表[arr]
+         pages:[
+     {
+     html: '<p class="slider1">slider1</p>',
+     style: {
+      'background': '#1bbc9b'
       }
+     },
+     {
+      html: '<p class="slider2">slider2</p>',
+      style: {
+       'background': '#4bbfc3'
+      }
+     },
+     {
+      html: '<p class="slider3">slider3</p>',
+      style: {
+       'background': '#7baabe'
+      }
+     }
+    ],
+    //Sliding configuration [obj]
+    sliderinit: {
+     currentPage: 0,
+     thresholdDistance: 500,
+     thresholdTime: 100,
+     autoplay:1000,
+     loop:true,
+     direction:'vertical',
+     infinite:1,
+     slidesToScroll:1,
+     timingFunction: 'ease',
+     duration: 300
+    }
+   }
+  },
+  mounted(){
+      // console.log("1111111111");
+      // new Swiper('.swiper-container', {
+      //   pagination: {
+      //     el: '.swiper-pagination'
+      //   },
+      //   loop : true,
+      //   autoplay:true
+      // });
   },
   methods: {
     getImg(){
-      var that = this;
       fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
         this.avator = res.data.data.avatar;
       })
+    },
+    tiezi(){
+
     },
     getLun(){
       // new Swiper('.swiper-container', {
@@ -115,7 +165,20 @@ export default {
       //   loop : true,
       //   autoplay:true
       // });
-    }
+    },
+    // Listener event
+   slide (data) {
+    console.log(data)
+   },
+   onTap (data) {
+    console.log(data)
+   },
+   onInit (data) {
+    console.log(data)
+   }
+  },
+  components: {
+      slider
   }
 };
 </script>
