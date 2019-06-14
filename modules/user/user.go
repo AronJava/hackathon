@@ -31,3 +31,8 @@ func GetInfoByUsername(username string) (*User, error) {
 	log.Printf("user GetInfoByUsername. err: %v", err)
 	return user, err
 }
+
+func Insert(u user) error {
+	_, err := utils.Engine.Insert(user)
+	return err
+}
