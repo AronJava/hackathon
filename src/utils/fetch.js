@@ -11,5 +11,5 @@ export const fetchGet = (url, params = {}) => {
   }
 // post方法
 export const fetchPost = (url, params = {}, config) => {
-return service.post(`${url}`, qs.stringify(params), config)
+    return service.post(`${url}`, qs.stringify(params), config)
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="user">
-        我是user页面
+        <!-- 我是user页面
         <ul>
             <router-link v-for = "item in userList" :to = "'/user/'+item.id" tag = "li" exact = "">{{item.name}}</router-link>
             <router-link :to="{path:'',query:{info:'share'}}"  tag="li" exact="">他的分享</router-link>
@@ -10,7 +10,7 @@
                 性别：{{userInfo.sex}}
                 爱好：{{userInfo.hobby}}
             </div>
-        </ul>
+        </ul> -->
     </div>
 </template>
 <script>

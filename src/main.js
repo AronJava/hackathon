@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import router from './router'
 import App from './App'
+import fixble from './utils/flexible'
 import './assets/css/app.css';
+import axios from 'axios'
+
 
 var vm = new Vue({
   el: '#app',
@@ -9,6 +12,7 @@ var vm = new Vue({
   components: { App },
   template: '<App/>'
 })
+Vue.prototype.$http = axios
 vm.$router.beforeEach(function(to,from,next){
   next();
 })

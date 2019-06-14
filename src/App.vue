@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/images/logo.png"/>
     <div class="nav-box">
      <ul class="nav">
-       <router-link :to = '{path:"/article"}' tag="li" event="mouseover">文章</router-link>
-       <router-link  :to = '{path:"/post"}' active-class="a" tag="li">帖子</router-link>
-       <router-link  to="/person" tag="li">活动</router-link>
-       <router-link  to="/user" tag="li">我的</router-link>
+       <router-link :to = '{path:"/article"}' tag="li" event="mouseover" class="ml5"><i class="boottom_btn"></i>头条</router-link>
+       <router-link  :to = '{path:"/post"}' active-class="a" tag="li"><i class="boottom_btn"></i>论坛</router-link>
+       <router-link  :to = '{path:"/send"}' active-class="a" tag="li"><i class="boottom_btn"></i>发新帖</router-link>
+       <router-link  to="/person" tag="li"><i class="boottom_btn"></i>消息</router-link>
+       <router-link  to="/mine/index" tag="li"><i class="boottom_btn"></i>我的</router-link>
     </ul>
    </div>
    <!-- <button @click = "forward">前进</button>
@@ -14,15 +14,14 @@
    <button @click = "back">后退</button>
    <button @click = "push">push</button>
    <button @click = "replace">replace</button> -->
-   <router-view name="slides"></router-view>
+   <!-- <router-view name="slides"></router-view> -->
    <transition :name = "name" mode="out-in">
-      <router-view class="center"></router-view>
+      <router-view class="center content"></router-view>
    </transition>
   </div>
 </template>
 <script>
 export default {
-  
   name:"app",
   data(){
     return {

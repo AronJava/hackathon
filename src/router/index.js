@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import article from '@/components/article/index'
 import post from '@/components/post/index'
 import activity from '@/components/activity/index'
+import send from '@/components/send/index'
 import ing from '@/components/activity/children/ing'
 import learn from '@/components/activity/children/learn'
 import work from '@/components/activity/children/work'
 import error from '@/components/error'
-import user from '@/components/user'
+import mine from '@/components/mine/index'
 import slides from '@/components/post/slides'
 Vue.use(Router)
 
@@ -47,6 +48,15 @@ export default new Router({
       meta:{
         index:1
       }
+    },,{
+      path:'/send',
+      name:"send",
+      components:{
+        default:send
+      },
+      meta:{
+        index:1
+      }
     },{
       path: '/activity',
       component: activity,
@@ -71,8 +81,8 @@ export default new Router({
         }
       ]
     },{
-      path:'/user/:id?',
-      component:user,
+      path:'/mine/:id?',
+      component:mine,
       meta:{
         index:3
       }
