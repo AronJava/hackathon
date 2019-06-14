@@ -7,6 +7,9 @@ import send from '@/components/send/index'
 import ing from '@/components/activity/children/ing'
 import learn from '@/components/activity/children/learn'
 import work from '@/components/activity/children/work'
+import wonActivity from '@/components/post/children/wonActivity'
+import life from '@/components/post/children/life'
+import technology from '@/components/post/children/technology'
 import error from '@/components/error'
 import mine from '@/components/mine/index'
 import slides from '@/components/post/slides'
@@ -42,12 +45,28 @@ export default new Router({
       path:'/post',
       name:"post",
       components:{
-        default:post,
-        slides:slides
+        default:post
       },
-      meta:{
-        index:1
-      }
+      children:[
+        {
+          path:"",
+          name:"wonActivity",
+          component: wonActivity,
+          meta:{
+            index:0
+          }
+        },
+        {
+          path:"wonActivity",
+          component: wonActivity,
+        },{
+          path:"life",
+          component: life,
+        },{
+          path:"technology",
+          component: technology,
+        }
+      ]
     },,{
       path:'/send',
       name:"send",

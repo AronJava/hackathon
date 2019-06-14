@@ -1,6 +1,7 @@
 @import './article.css';
+@import './post.css';
 
-/* @import './post.css';
+/* 
 @import './activity.css'; */
 
 * {
@@ -29,17 +30,17 @@ a {
 .active,
 .a {
     color: #e9502b;
-    border-bottom: 5px solid #e9502b;
-    border-radius: 15px;
+    /* border-bottom: 5px solid #e9502b;
+    border-radius: 15px; */
     font-weight: 800;
 }
 
 .center {
-    text-align: center;
     width: 100%;
-    font-size: 50px;
+    font-size: 0.12rem;
     position: absolute;
-    top: 200px;
+    top: 0;
+    left: 0;
 }
 
 .v-enter {
@@ -51,7 +52,7 @@ a {
 }
 
 .v-enter-active {
-    transition: opacity 0.02s ease-in-out;
+    transition: opacity 0s ease-in-out;
 }
 
 .v-leave {
@@ -63,7 +64,7 @@ a {
 }
 
 .v-leave-active {
-    transition: opacity 0.02s ease-out;
+    transition: opacity 0s ease-out;
 }
 
 .left-enter {
@@ -75,7 +76,7 @@ a {
 }
 
 .left-enter-active {
-    transition: transform 0.02s ease-in;
+    transition: transform 0s ease-in;
 }
 
 .left-leave {
@@ -87,7 +88,7 @@ a {
 }
 
 .left-leave-active {
-    transition: transform 0.02s ease-out;
+    transition: transform 0s ease-out;
 }
 
 .right-enter {
@@ -99,7 +100,7 @@ a {
 }
 
 .right-enter-active {
-    transition: transform 0.02s ease-in;
+    transition: transform 0s ease-in;
 }
 
 .right-leave {
@@ -111,27 +112,32 @@ a {
 }
 
 .right-leave-active {
-    transition: transform 0.02s ease-out;
+    transition: transform 0s ease-out;
 }
 
 
 /*首页*/
 html,body{
     overflow-x: hidden;
-    width:3.75rem;
+    width: 3.75rem;
+    height: 100%;
 }
 #app .nav-box{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 0.75rem;
+    height: 0.65rem;
     z-index: 10;
     background: #fff;
     border-top: 1px solid #ccc;
+    padding-top: 0.1rem;
 }
 #app {
     font-size:0.12rem;
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 #app .nav-box .nav .boottom_btn{
     display: inline-block;
