@@ -5,6 +5,7 @@ import (
 
 	"hackathon/controllers/bulletscreen"
 	"hackathon/controllers/admin"
+	"hackathon/controllers/account"
 )
 
 // Routers 路由
