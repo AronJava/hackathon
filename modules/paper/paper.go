@@ -8,7 +8,7 @@ type Event struct {
 	Title           string
 	Content         string
 	UID             int `json:"uid"`
-	Type            string
+	Type            int
 	Img             string
 	EventStartTime  int
 	EventEndTime    int
@@ -24,4 +24,38 @@ func Show() []Event {
 	event := make([]Event, 0)
 	utils.Engine.Get(&event)
 	return event
+}
+
+// Add 添加活动
+func Add(userID int, title, content string, eventType int, img string, eventStartTime, eventEndTime, signupStartTime, signupEndTime int) {
+	event := new(Event)
+	event.UID = userID
+	event.Title = title
+	event.Content = content
+	event.Type = eventType
+	event.Img = img
+	event.EventStartTime = eventStartTime
+	event.EventEndTime = eventEndTime
+	event.SignupStartTime = signupStartTime
+	event.SignupEndTime = signupEndTime
+
+	utils.Engine.Insert(event)
+}
+
+// Update 添加活动
+func Update(userID int, title, content string, eventType int, img string, eventStartTime, eventEndTime, signupStartTime, signupEndTime, browseNum, recommendNum int) {
+	event := new(Event)
+	event.UID = userID
+	event.Title = title
+	event.Content = content
+	event.Type = eventType
+	event.Img = img
+	event.EventStartTime = eventStartTime
+	event.EventEndTime = eventEndTime
+	event.SignupStartTime = signupStartTime
+	event.SignupEndTime = signupEndTime
+	event.BrowseNum = browseNum
+	event.RecommendNum = recommendNum
+
+	utils.Engine.Insert(event)
 }
