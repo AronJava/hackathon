@@ -1,6 +1,9 @@
 package paper
 
-import "hackathon/utils"
+import (
+	"hackathon/utils"
+	"log"
+)
 
 // Event 活动表
 type Event struct {
@@ -23,10 +26,10 @@ type Event struct {
 func Show(eventType int) []Event {
 	event := make([]Event, 0)
 	if eventType == 0 {
-		utils.Engine.Get(&event)
+		utils.Engine.Find(&event)
 		return event
 	}
-	utils.Engine.Where("type = ?", eventType).Get(&event)
+	utils.Engine.Where("type = ?", eventType).Find(&event)
 	return event
 
 }
@@ -63,4 +66,22 @@ func Update(userID int, title, content string, eventType int, img string, eventS
 	event.RecommendNum = recommendNum
 
 	utils.Engine.Insert(event)
+}
+
+// GetInfoByEventID 通过帖子ID获取信息
+func GetInfoByEventID(eventID int) (*Event, error) {
+	event := new(Event)
+	_, err := utils.Engine.Where("id = ?", eventID).Get(&event)
+	log.Printf("paper GetInfoByEventID. err: %v", err)
+	return event, err
+
+}
+
+// GetInfoByType 通过帖子类型获取信息
+func GetInfoByType(eventType int) ([]Event, error) {
+	events := make([]Event, 0)
+	err := utils.Engine.Where("type = ?", eventType).Desc("recommend_num").Find(&events)
+	log.Printf("paper GetInfoByEventID. err: %v", err)
+	return events, err
+
 }
