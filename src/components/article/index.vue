@@ -1,7 +1,7 @@
 <template>
   <div class="article">
     <div class="top">
-      <img class="avatar" src=""/>
+      <img class="avatar" v-bind:src="avator">
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   name: "post",
   data() {
       return {
-        avator: ''
+        avator: '11'
       }
   },
   methods: {
