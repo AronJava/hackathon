@@ -3,6 +3,7 @@ package admin
 import(
 	"net/http"
 	"strconv"
+	"strings"
 
 	"hackathon/modules/user"
 	"hackathon/modules/paper"
@@ -10,11 +11,11 @@ import(
 )
 
 func Collection(w http.ResponseWriter, r *http.Request) {
-	id, _ := strconv.Atoi(r.Header.Get("User-ID")[0])
-	userInfo := user.GetUserInfo(id)
+	id, _ := strconv.Atoi(r.Header["User-ID"][0])
+	userInfo, _ := user.GetInfo(id)
 
 	eventsId := strings.Split(userInfo.StorePaperID, ",")
-	events := make(paper.Event, 0)
+	events := make([]paper.Event, 0)
 	for _, e := range eventsId {
 		id, _ := strconv.Atoi(e)
 		event := paper.GetPaperByid(id)

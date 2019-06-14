@@ -9,10 +9,8 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	vars := r.URL.Query()
-
-	id, _ := strconv(r.Header.Get("User-ID")[0])
-	userInfo := user.GetUserInfo(id)
+	id, _ := strconv.Atoi(r.Header["User-ID"][0])
+	userInfo, _ := user.GetInfo(id)
 
 	utils.ResponseJson(w, 0, "success", userInfo)
 }

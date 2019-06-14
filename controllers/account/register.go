@@ -2,11 +2,14 @@ package account
 
 import (
 	"net/http"
+	"log"
 
 	"hackathon/modules/user"
+	"hackathon/utils"
 )
 
 func Register(w http.ResponseWriter, r *http.Request) {
+	vars := r.URL.Query()
 	userName := vars.Get("userName")
 	if userName == "" {
 		log.Printf("userName is invaild")

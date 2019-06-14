@@ -7,7 +7,7 @@ import(
 
 	"github.com/gorilla/sessions"
 
-	"hackathon/modules"
+	"hackathon/modules/cl"
 	"hackathon/controllers"
 	"hackathon/utils"
 	"hackathon/modules/session"
@@ -17,7 +17,7 @@ var routers = controllers.Routers
 
 func main() {
 	utils.MysqlInit()
-	modules.ClientInit()
+	cl.ClientInit()
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	for k, v := range routers {
