@@ -1,0 +1,41 @@
+.activity{
+
+}
+.activity .msg{
+    position: absolute;
+    left: 50%;
+    width: 3.6rem;
+    height: 0.64rem;
+    border-radius: 0.08rem;
+    -webkit-box-shadow: 0rem 0.03rem 0.05rem #ccc;
+    box-shadow: 0rem 0.03rem 0.05rem #ccc;
+    margin-top: 0.25rem;
+    background: #fff;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    line-height: 0.64rem;
+    font-size: 0.15rem;
+
+}
+.activity .system_msg{
+    top: 1rem;
+}
+.activity .comment_msg{
+    top: 1.8rem;
+}
+.activity .msg .iconl{
+    display: inline-block;
+    width: 0.25rem;
+    height: 0.2rem;
+    margin-left: 0.16rem;
+    margin-right: 0.2rem;
+    vertical-align: -0.04rem;
+}
+.activity .msg .s_icon{
+    background: url(../images/s_msg.png) no-repeat;
+    background-size:100% 100%;
+}
+.activity .msg .c_icon{
+    background: url(../images/c_msg.png) no-repeat;
+    background-size:100% 100%;
+}

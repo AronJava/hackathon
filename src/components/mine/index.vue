@@ -1,5 +1,5 @@
 <template>
-    <div class="user">
+    <div class="mine">
         <!-- 我是user页面
         <ul>
             <router-link v-for = "item in userList" :to = "'/user/'+item.id" tag = "li" exact = "">{{item.name}}</router-link>
@@ -11,36 +11,16 @@
                 爱好：{{userInfo.hobby}}
             </div>
         </ul> -->
+
+        <img src="https://event.ncfwx.com/upload/image/20190614/21-15-mineAva_03.png" class="mine_avator" alt="">
     </div>
 </template>
 <script>
-let userList = [{
-    id:1,
-    name:"jyy",
-    sex:"female",
-    hobby:"male"
-},{
-    id:2,
-    name:"wpp",
-    sex:"male",
-    hobby:"female"
-},{
-    id:3,
-    name:"wxs",
-    sex:"male",
-    hobby:"fireHair"
-},{
-    id:4,
-    name:"wjk",
-    sex:"male",
-    hobby:"fireHair"
-}] 
 export default {
     name:"user",
     data(){
         return {
-            userList:userList,
-            userInfo:{}
+         
         }
     },
     beforeCreate(){

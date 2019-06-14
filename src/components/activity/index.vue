@@ -1,11 +1,15 @@
 <template>
-  <div class="person">
-    <ul>
-       <router-link :to='{path:"/person/ing"}' tag="li" exact><i class="fa fa-home"></i>活动ing</router-link>
-       <router-link  :to='{path:"/person/learn"}' tag="li">活动ed</router-link>
-       <!-- <router-link  to="/person/work" tag="li">work</router-link> -->
-     </ul>
-      <router-view class="center"></router-view>
+  <div class="activity">
+    <div class="msg system_msg">
+      <i class="iconl s_icon"></i>
+      系统消息
+      <i></i>
+    </div>
+    <div class="msg comment_msg">
+      <i class="iconl c_icon"></i>
+      评论消息
+      <i></i>
+    </div>
   </div>
 </template>
 

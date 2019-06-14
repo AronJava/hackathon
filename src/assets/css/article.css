@@ -84,64 +84,6 @@
     height: 36px;
     background-color: #1f6bc9;
 }
-.article .top .avatar,
-.post .top .avatar{
-    position: absolute;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.05rem 0.1rem #ccc;
-    -webkit-box-shadow: 0 0.05rem 0.1rem #ccc;
-    top: 0.3rem;
-    left: 0.15rem;
-}
-.article .top .date,
-.post .top .date{
-    position: absolute;
-    left: 0.8rem;
-    top: 0.35rem;
-    width: 0.8rem;
-    height: 0.75rem;
-    text-align: center;
-}
-.article .top .date .text1,
-.post .top .date .text1{
-    font-size:0.16rem;
-    color:#474747;
-}
-.article .top .date .text2,
-.post .top .date .text2{
-    font-size:0.12rem;
-    color:#fa4619;
-}
-.article .top .search,
-.post .top .search{
-    position: absolute;
-    top: 0.3rem;
-    right: 0.1rem;
-    width: 2rem;
-    height: 0.4rem;
-    outline: none;
-    border: none;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-}
-.article .top .search::-webkit-input-placeholder,
-.post .top .search::-webkit-input-placeholder{
-    padding-left:0.5rem;
-}    /* 使用webkit内核的浏览器 */
-.article .top .search:-moz-placeholder,
-.post .top .search::-webkit-input-placeholder{
-    padding-left:0.5rem;
-}                  /* Firefox版本4-18 */
-.article .top .search::-moz-placeholder,
-.post .top .search::-webkit-input-placeholder{
-    padding-left:0.5rem;
-}                  /* Firefox版本19+ */
-.article .top .search:-ms-input-placeholder,
-.post .top .search::-webkit-input-placeholder{
-    padding-left:0.5rem;
-}           /* IE浏览器 */
 .article  .crousel{
     position: absolute;
     top: 1rem;
@@ -211,7 +153,6 @@
     position: relative;
     width: 3.6rem;
     height: 0.85rem;
-    border: 1px solid #ccc;
     border-radius: 0.08rem;
     -webkit-box-shadow: 0rem 0.1rem 0.1rem #ccc;
     box-shadow: 0rem 0.1rem 0.1rem #ccc;

@@ -1,13 +1,5 @@
 <template>
   <div class="article">
-    <div class="top">
-      <img class="avatar" v-bind:src="avator">
-      <div class="date">
-        <span class="text1">{{dataYang}}</span>
-        <span class="text2">{{dataYin}}</span>
-      </div>
-      <input type="text" placeholder="彭世豪采茶纪" class="search">
-    </div>
     <div class="crousel">
        <!-- Swiper -->
       <div class="swiper-container">

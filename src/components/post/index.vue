@@ -1,14 +1,6 @@
 <template>
     <div class="post">
        <div class="post_area">
-            <div class="top">
-                <img class="avatar" v-bind:src="avator">
-                <div class="date">
-                    <span class="text1">{{dataYang}}</span>
-                    <span class="text2">{{dataYin}}</span>
-                </div>
-                <input type="text" placeholder="彭世豪采茶纪" class="search">
-            </div>
             <div class="post_content">
                 <ul class="post_daohang">
                     <router-link :to='{path:"/post/wonActivity"}' tag="li" exact><i class="wonA_icon"></i>精彩活动</router-link>

@@ -1,8 +1,7 @@
 @import './article.css';
 @import './post.css';
-
-/* 
-@import './activity.css'; */
+@import './activity.css';
+@import './mine.css';
 
 * {
     margin: 0;
@@ -150,3 +149,55 @@ html,body{
     margin-left:5%;
 }
 /*首页*/
+
+/*整体-头部*/
+#app .top .avatar{
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.05rem 0.1rem #ccc;
+    -webkit-box-shadow: 0 0.05rem 0.1rem #ccc;
+    top: 0.3rem;
+    left: 0.15rem;
+}
+#app .top .date{
+    position: absolute;
+    left: 0.8rem;
+    top: 0.35rem;
+    width: 0.8rem;
+    height: 0.75rem;
+    text-align: center;
+}
+#app .top .date .text1{
+    font-size:0.16rem;
+    color:#474747;
+}
+#app .top .date .text2{
+    font-size:0.12rem;
+    color:#fa4619;
+}
+#app .top .search{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.1rem;
+    width: 2rem;
+    height: 0.4rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+}
+#app .top .search::-webkit-input-placeholder{
+    padding-left:0.5rem;
+}    /* 使用webkit内核的浏览器 */
+#app .top .search:-moz-placeholder{
+    padding-left:0.5rem;
+}                  /* Firefox版本4-18 */
+#app .top .search::-moz-placeholder{
+    padding-left:0.5rem;
+}                  /* Firefox版本19+ */
+#app .top .search:-ms-input-placeholder{
+    padding-left:0.5rem;
+}           /* IE浏览器 */
+/*整体头部*/
