@@ -3,10 +3,12 @@ package controllers
 import (
 	"net/http"
 
-	"hackathon/controllers/bulletscreen"
-	"hackathon/controllers/admin"
 	"hackathon/controllers/account"
+	"hackathon/controllers/admin"
+	"hackathon/controllers/bulletscreen"
+	"hackathon/controllers/index"
 	"hackathon/controllers/paper"
+	"hackathon/controllers/signup"
 )
 
 // Routers 路由
@@ -15,11 +17,15 @@ var Routers = map[string]http.HandlerFunc{
 	// websocket 弹幕接口
 	"/bulletscreen/ws": bulletscreen.Ws,
 	// 帖子展示
-	"/paper/show": paper.Show,
+	"/index/show": index.Show,
+	// 帖子详情
+	"/paper/detail": paper.Show,
+	// 帖子详情
+	"/paper/update": paper.Update,
 	// 添加评论
-	"/paper/addComment": paper.addComment,
+	"/paper/add": paper.Add,
 	// 报名
-	"/paper/signup": paper.Signup,
+	"/signup/checkin": signup.CheckIn,
 	// 个人信息
 	"/admin/index": admin.Index,
 	//我的贴子

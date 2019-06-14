@@ -8,8 +8,8 @@ import (
 	"strconv"
 )
 
-// Signup 签到
-func Signup(w http.ResponseWriter, r *http.Request) {
+// CheckIn 签到
+func CheckIn(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	userID, err := strconv.Atoi(r.Header.Get("User-Id"))
 	if userID <= 0 {
