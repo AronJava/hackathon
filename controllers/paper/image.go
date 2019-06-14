@@ -8,6 +8,7 @@ import(
 
 func GenerateImg(w http.ResponseWriter, r *http.Request) {
 	vars := r.URL.Query()
+	id := r.Header["User-ID"][0]
 
 	img := vars.Get("img")
 	if img == "" {
@@ -15,7 +16,7 @@ func GenerateImg(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	url := utils.GenerateImage(img)
+	url := utils.GenerateImage(img, id)
 	if url == "" {
 		utils.ResponseJson(w, -1, "generate failed.", nil)
 		return

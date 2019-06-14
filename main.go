@@ -3,9 +3,7 @@ package main
 import(
 	"fmt"
 	"net/http"
-	"os"
 
-	"github.com/gorilla/sessions"
 
 	"hackathon/modules/cl"
 	"hackathon/controllers"
@@ -31,7 +29,7 @@ func middleWare(h http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		s, _ := session.Store.Get(r, "session_name")
 		id := s.Values["userid"]
-		if r.RequestURL != "/account/login" && id == nil {
+		if r.RequestURI != "/account/login" && id == nil {
 			http.Redirect(w, r, "/account/login", 302)
 			return
 		}
