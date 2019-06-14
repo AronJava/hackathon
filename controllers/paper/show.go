@@ -5,12 +5,20 @@ import (
 	"hackathon/utils"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"time"
 )
 
 // Show 展示页面
 func Show(w http.ResponseWriter, r *http.Request) {
-	events := paper.Show()
+	r.ParseForm()
+	eventType, err := strconv.Atoi(r.Form.Get("eventType"))
+
+	if err != nil {
+		utils.ResponseJson(w, -1, "param error", nil)
+		return
+	}
+	events := paper.Show(eventType)
 	if len(events) == 0 {
 		utils.ResponseJSON(w, 0, "数据为空", nil)
 		return

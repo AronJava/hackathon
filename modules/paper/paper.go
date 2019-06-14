@@ -20,10 +20,15 @@ type Event struct {
 }
 
 // Show 展示数据
-func Show() []Event {
+func Show(eventType int) []Event {
 	event := make([]Event, 0)
-	utils.Engine.Get(&event)
+	if eventType == 0 {
+		utils.Engine.Get(&event)
+		return event
+	}
+	utils.Engine.Where("type = ?", eventType).Get(&event)
 	return event
+
 }
 
 // Add 添加活动
