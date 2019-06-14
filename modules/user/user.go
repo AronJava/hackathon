@@ -1,6 +1,9 @@
 package user
 
-import "hackathon/utils"
+import (
+	"hackathon/utils"
+	"log"
+)
 
 // User 用户信息表
 type User struct {
@@ -14,8 +17,17 @@ type User struct {
 }
 
 // GetInfo 获取用户信息
-func GetInfo(userID int) *User {
+func GetInfo(userID int) (*User, error) {
 	user := new(User)
-	utils.Engine.Where("id = ?", userID).Get(&user)
-	return user
+	_, err := utils.Engine.Where("id = ?", userID).Get(&user)
+	log.Printf("user GetInfo. err: %v", err)
+	return user, err
+}
+
+// GetInfoByUsername 通过名字获取用户信息
+func GetInfoByUsername(username string) (*User, error) {
+	user := new(User)
+	_, err := utils.Engine.Where("user_name = ?", username).Get(&user)
+	log.Printf("user GetInfoByUsername. err: %v", err)
+	return user, err
 }

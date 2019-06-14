@@ -28,11 +28,11 @@ func Add(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	userID, err := strconv.Atoi(r.Header.Get("User-Id"))
 	if userID <= 0 {
-		utils.ResponseJSON(w, -1, "获取用户登录状态失败", nil)
+		utils.ResponseJson(w, -1, "获取用户登录状态失败", nil)
 		log.Printf("account Summary get userID failed. err:%s", err)
 		return
 	}
-	userInfo := user.GetInfo(userID)
+	userInfo, _ := user.GetInfo(userID)
 	data, _ := ioutil.ReadAll(r.Body)
 	var requestData *RequestData
 	err = json.Unmarshal(data, &requestData)

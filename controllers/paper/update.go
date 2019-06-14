@@ -15,7 +15,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	userID, err := strconv.Atoi(r.Header.Get("User-Id"))
 	if userID <= 0 {
-		utils.ResponseJSON(w, -1, "获取用户登录状态失败", nil)
+		utils.ResponseJson(w, -1, "获取用户登录状态失败", nil)
 		log.Printf("update get userID failed. err:%s", err)
 		return
 	}

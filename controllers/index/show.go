@@ -20,11 +20,11 @@ func Show(w http.ResponseWriter, r *http.Request) {
 	}
 	events := paper.Show(eventType)
 	if len(events) == 0 {
-		utils.ResponseJSON(w, 0, "数据为空", nil)
+		utils.ResponseJson(w, 0, "数据为空", nil)
 		return
 	}
 	if len(events) <= 10 {
-		utils.ResponseJSON(w, 0, "数据不足", events)
+		utils.ResponseJson(w, 0, "数据不足", events)
 	}
 	seed := rand.New(rand.NewSource(time.Now().UnixNano()))
 	result := make([]paper.Event, 0)
@@ -43,5 +43,5 @@ func Show(w http.ResponseWriter, r *http.Request) {
 		}
 
 	}
-	utils.ResponseJSON(w, 0, "", result)
+	utils.ResponseJson(w, 0, "", result)
 }
