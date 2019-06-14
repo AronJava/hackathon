@@ -5,6 +5,7 @@ import(
 	"log"
 
 	"hackathon/modules/user"
+	"hackathon/modules/session"
 )
 
 func Login(w http.ResponseWriter, r *http.Request) {
@@ -40,6 +41,9 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		utils.ResponseJson(w, -3, "password is wrong", nil)
 		return
 	}
+
+	s, _ := session.Store.Get(r, "session_name")
+	s.Values["userid"] = strconv.Itoa(userInfo.ID)
 
 	http.Redirect(w, r, "/index/show", 302)
 }

@@ -5,14 +5,15 @@ import(
 	"net/http"
 	"os"
 
+	"github.com/gorilla/sessions"
+
 	"hackathon/modules"
 	"hackathon/controllers"
 	"hackathon/utils"
-	"github.com/gorilla/sessions"
+	"hackathon/modules/session"
 )
 
 var routers = controllers.Routers
-var store = sessions.NewCookieStore([]byte(os.Getenv("SESSION_KEY")))
 
 func main() {
 	utils.MysqlInit()
@@ -28,14 +29,17 @@ func main() {
 
 func middleWare(h http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		session, _ := store.Get(r, "session_name")
-		id := session.Values["userid"]
-		if id == nil {
-			http.Redirect(w, r, "/login", 302)
+		s, _ := session.Store.Get(r, "session_name")
+		id := s.Values["userid"]
+		if r.RequestURL != "/account/login" && id == nil {
+			http.Redirect(w, r, "/account/login", 302)
 			return
 		}
 
-		r.Header.Add("User-ID", id.(string))
+		if id != nil {
+			r.Header.Add("User-ID", id.(string))
+		}
+
 		h(w, r)
 	}
 }
