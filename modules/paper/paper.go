@@ -71,7 +71,7 @@ func Update(userID int, title, content string, eventType int, img string, eventS
 // GetInfoByEventID 通过帖子ID获取信息
 func GetInfoByEventID(eventID int) (*Event, error) {
 	event := new(Event)
-	_, err := utils.Engine.Where("id = ?", eventID).Get(&event)
+	_, err := utils.Engine.Where("id = ?", eventID).Get(event)
 	log.Printf("paper GetInfoByEventID. err: %v", err)
 	return event, err
 

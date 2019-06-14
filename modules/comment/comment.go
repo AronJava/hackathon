@@ -8,7 +8,7 @@ import (
 // Reply 回复评论表
 type Reply struct {
 	ID         int `xorm:"'id' notnull pk autoincr"`
-	Comment    string
+	Content    string
 	EventID    int
 	ReplyID    int
 	ReplyType  int
@@ -20,7 +20,7 @@ type Reply struct {
 // Add 添加评论
 func Add(comment string, eventID, replyID, replyType, fromUID, toUID int) {
 	reply := new(Reply)
-	reply.Comment = comment
+	reply.Content = comment
 	reply.EventID = eventID
 	reply.ReplyID = replyID
 	reply.ReplyType = replyType
@@ -32,7 +32,15 @@ func Add(comment string, eventID, replyID, replyType, fromUID, toUID int) {
 // GetCommentsByEventID 通过活动ID获取相关评论
 func GetCommentsByEventID(eventID int) ([]Reply, error) {
 	reply := make([]Reply, 0)
-	err := utils.Engine.Where("event_id = ?", eventID).Find(&reply)
+	err := utils.Engine.Where("event_id = ?", eventID).Desc("create_time").Find(&reply)
 	log.Printf("comment GetCommentsByEventID. err: %v", err)
+	return reply, err
+}
+
+// GetCommentByReplyID 通过回复ID获取相关评论
+func GetCommentByReplyID(eventID int) (*Reply, error) {
+	reply := new(Reply)
+	_, err := utils.Engine.Where("event_id = ?", eventID).Desc("create_time").Get(reply)
+	log.Printf("comment GetCommentByReplyID. err: %v", err)
 	return reply, err
 }
