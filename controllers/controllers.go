@@ -19,7 +19,7 @@ var Routers = map[string]http.HandlerFunc{
 	// 帖子展示
 	"/index/show": index.Show,
 	// 帖子详情
-	"/paper/detail": paper.Show,
+	"/paper/detail": paper.Detail,
 	// 帖子详情
 	"/paper/update": paper.Update,
 	// 添加评论
