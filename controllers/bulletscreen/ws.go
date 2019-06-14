@@ -5,7 +5,7 @@ import (
 	"time"
 	"net/http"
 
-	"hackathon/modules"
+	"hackathon/modules/cl"
 
 	"github.com/gorilla/websocket"
 )
@@ -30,7 +30,7 @@ func Ws(w http.ResponseWriter, r *http.Request) {
 	}
 
 	channel := make(chan string, 100000)
-	client := modules.Client{
+	client := cl.Client{
 		Ch:   channel,
 		Type: cType,
 	}
@@ -40,7 +40,7 @@ func Ws(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func send(c modules.Client, conn *websocket.Conn) {
+func send(c cl.Client, conn *websocket.Conn) {
 	defer func(){
 		c.Disconnect()
 		conn.Close()
@@ -60,7 +60,7 @@ func send(c modules.Client, conn *websocket.Conn) {
 	}
 }
 
-func read(c modules.Client, conn *websocket.Conn) {
+func read(c cl.Client, conn *websocket.Conn) {
 	defer func(){
 		c.Disconnect()
 		conn.Close()
@@ -74,10 +74,10 @@ func read(c modules.Client, conn *websocket.Conn) {
 			}
 			break
 		}
-		msg := modules.Message {
+		msg := cl.Message {
 			M:    string(message),
 			Type: c.Type,
 		}
-		modules.Send(msg)
+		cl.Send(msg)
 	}
 }
