@@ -16,6 +16,6 @@ type User struct {
 // GetInfo 获取用户信息
 func GetInfo(userID int) *User {
 	user := new(User)
-	utils.Engine.Get(&user)
+	utils.Engine.Where("id = ?", userID).Get(&user)
 	return user
 }

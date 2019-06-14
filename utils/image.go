@@ -1,9 +1,11 @@
 package utils
 
-import(
+import (
 	"encoding/base64"
-	"math/rand"
+	"fmt"
 	"log"
+	"math/rand"
+	"os"
 )
 
 var enc = base64.StdEncoding
