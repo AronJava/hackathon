@@ -18,5 +18,5 @@ var Routers = map[string]http.HandlerFunc{
 	// 报名
 	"/paper/signup": Paper.Signup,
 	// 个人信息
-	"/admin/personalinfo": Admin.PersonalInfo,
+	"/admin/index": Admin.Index,
 }
