@@ -19,7 +19,7 @@ func main() {
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	for k, v := range routers {
-		http.HandleFunc(k, v)
+		http.Handle(k, middleWare(v))
 	}
 	fmt.Println("server start.")
 	log.Fatal(http.ListenAndServe(":8089", nil))

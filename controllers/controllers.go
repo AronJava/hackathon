@@ -6,6 +6,7 @@ import (
 	"hackathon/controllers/account"
 	"hackathon/controllers/admin"
 	"hackathon/controllers/bulletscreen"
+	"hackathon/controllers/comment"
 	"hackathon/controllers/index"
 	"hackathon/controllers/paper"
 	"hackathon/controllers/signup"
@@ -20,12 +21,14 @@ var Routers = map[string]http.HandlerFunc{
 	"/index/show": index.Show,
 	// 帖子详情
 	"/paper/detail": paper.Detail,
-	// 帖子详情
+	// 帖子更新
 	"/paper/update": paper.Update,
-	// 添加评论
+	// 添加帖子（帖子）
 	"/paper/add": paper.Add,
 	// 上传图片
-	"/paper/uplod": paper.GenerateImg,
+	"/paper/upload": paper.GenerateImg,
+	// 添加评论
+	"/comment/add": comment.Add,
 	// 报名
 	"/signup/checkin": signup.CheckIn,
 	// 个人信息
