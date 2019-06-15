@@ -8,7 +8,7 @@ import(
 
 func GenerateImg(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	id := r.Header["User-Id"][0]
+	id := "4"
 
 	img := r.PostFormValue("img")
 	if img == "" {

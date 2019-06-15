@@ -10,14 +10,14 @@ import (
 
 func Register(w http.ResponseWriter, r *http.Request) {
 	vars := r.URL.Query()
-	userName := vars.Get("userName")
+	userName := vars.Get("username")
 	if userName == "" {
 		log.Printf("userName is invaild")
 		utils.ResponseJson(w, -1, "user name is invaild", nil)
 		return
 	}
 
-	passWord := vars.Get("passWord")
+	passWord := vars.Get("password")
 	if passWord == "" {
 		log.Printf("password is invaild")
 		utils.ResponseJson(w, -1, "password is invaild", nil)
@@ -34,7 +34,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	userInfo := user.User{
 		Name:     name,
 		UserName: userName,
-		PassWord: passWord,
+		Password: passWord,
 	}
 
 	err := user.Insert(userInfo)

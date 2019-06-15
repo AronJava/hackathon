@@ -3,9 +3,7 @@ package comment
 import (
 	"encoding/json"
 	"io/ioutil"
-	"log"
 	"net/http"
-	"strconv"
 
 	"hackathon/modules/comment"
 	"hackathon/modules/user"
@@ -26,16 +24,11 @@ type RequestData struct {
 // Add 增加评论
 func Add(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	userID, err := strconv.Atoi(r.Header.Get("User-Id"))
-	if userID <= 0 {
-		utils.ResponseJson(w, -1, "获取用户登录状态失败", nil)
-		log.Printf("account Summary get userID failed. err:%s", err)
-		return
-	}
+	userID := 4
 	userInfo, _ := user.GetInfo(userID)
 	data, _ := ioutil.ReadAll(r.Body)
 	var requestData *RequestData
-	err = json.Unmarshal(data, &requestData)
+	err := json.Unmarshal(data, &requestData)
 	if err != nil {
 		utils.ResponseJson(w, 10001, "参数解析错误", nil)
 		return

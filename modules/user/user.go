@@ -10,7 +10,7 @@ type User struct {
 	ID            int `xorm:"'id' notnull pk autoincr"`
 	Name          string
 	UserName      string
-	PassWord      string
+	Password      string
 	CreatePaperID string
 	StorePaperID  string
 	CreateTime    int `xorm:"created"`

@@ -13,14 +13,14 @@ import(
 func Login(w http.ResponseWriter, r *http.Request) {
 	vars := r.URL.Query()
 
-	userName := vars.Get("userName")
+	userName := vars.Get("username")
 	if userName == "" {
 		log.Printf("userName is invaild")
 		utils.ResponseJson(w, -1, "user name is invaild", nil)
 		return
 	}
 
-	passWord := vars.Get("passWord")
+	passWord := vars.Get("password")
 	if passWord == "" {
 		log.Printf("password is invaild")
 		utils.ResponseJson(w, -1, "password is invaild", nil)
@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if userInfo.PassWord != passWord {
+	if userInfo.Password != passWord {
 		utils.ResponseJson(w, -3, "password is wrong", nil)
 		return
 	}
