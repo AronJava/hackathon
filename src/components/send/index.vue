@@ -2,11 +2,24 @@
     <div class="postDetail send">
        <div class="topBar">
             <i class="return" @click="jsReturn"></i>
-            <i class="diandiandian"></i>
+            <span class="fabu" @click="fabu">发布</span>
        </div>
        <div class="content">
-          <input type="text" class="tieTitle" placeholder="">
-          <textarea name="tieCon" id="tieCon" cols="300" rows="50"></textarea>
+          <input type="text" v-model="inpTitle" class="tieTitle" placeholder="请输入标题（必填）">
+          <textarea name="tieCon"  v-model="inpCom" id="tieCon" cols="300" rows="50" placeholder="请输入内容（必填）"></textarea>
+       </div>
+        <div class="com_wrap">
+         <input type="text" class="com_inp" placeholder="评论一下..." v-model="value"  @keyup.enter="jsCom">
+         <div class="bg">
+            <span class="bg_img bg_huifu"></span>
+            <!-- <span>12</span> -->
+         </div>
+         <div class="bg">
+            <span class="bg_img bg_shoucang"></span>
+         </div>
+         <div class="bg">
+            <span class="bg_img bg_share"></span>
+         </div>
        </div>
     </div>
 </template>
@@ -38,16 +51,16 @@ export default {
     name:"postDetail",
     created() {
         this.getImg();
-        this.getLun();
     },
     data() {
       return {
-        avator: '',
         dataYang:'2019.06.15',
         dataYin:'农历五月十三',
         itemList:itemList,
         author:author,
-        value:""
+        value:"日常生活",
+        inpTitle:"",
+        inpCom:""
       }
     },
     methods:{
@@ -56,9 +69,9 @@ export default {
     },
     getImg(){
       var that = this;
-      fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
-        this.avator = res.data.data.avatar;
-      })
+      // fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
+      //   this.avator = res.data.data.avatar;
+      // })
     },
     jsCom(e){
       // console.log(e);
@@ -72,19 +85,15 @@ export default {
       this.value = "";
       itemList.push(text);
       this.itemList = itemList;
-      console.log(this.itemList);
     },
     jsReturn(){
         this.$router.back();
     },
-    getLun(){
-      // new Swiper('.swiper-container', {
-      //   pagination: {
-      //     el: '.swiper-pagination'
-      //   },
-      //   loop : true,
-      //   autoplay:true
-      // });
+    fabu(){
+      console.log(this.inpTitle,this.inpCom);
+       fetchGet('/api/paper/add',{"title":this.inpTitle,"content":this.inpCom,"type":1,}).then(res=>{
+    
+      })
     }
     }
 }

@@ -215,7 +215,8 @@
     width: 3.6rem;
     height: 1rem;
 }
-/* 帖子 */.postDetail .tuijian .tuijian_tiezi .postDetail .comment{
+/* 帖子 */
+.postDetail .tuijian .tuijian_tiezi .postDetail .comment{
 
 }
 .postDetail .comment .com_til{
@@ -336,12 +337,179 @@
 .send .topBar{
     background: #fff;
 }
-.send .content{
-    background:#eee;
+.send .content {
+    background: #eee;
+    height: 5.17rem;
+}
+.send .content #tieCon{
+    outline:none;
+    border:none;
+    font-size:0.14rem;
+    color:#333;
 }
 .send .tieTitle{
     width: 100%;
+    height:0.5rem;
     outline: none;
     border: none;
+    font-size:0.2rem;
+    color:#333;
+    padding-left:0.1rem;
+}
+.send .tieTitle::-webkit-input-placeholder{
+    font-size:0.2rem;
+    color:#999;
+    padding-left:0.1rem;
+}    /* 使用webkit内核的浏览器 */
+.send .tieTitle:-moz-placeholder{
+    font-size:0.2rem;
+    color:#999;
+    padding-left:0.1rem;
+}                  /* Firefox版本4-18 */
+.send .tieTitle::-moz-placeholder{
+    font-size:0.2rem;
+    color:#999;
+    padding-left:0.1rem;
+}                  /* Firefox版本19+ */
+.send .tieTitle:-ms-input-placeholder{
+    font-size:0.2rem;
+    color:#999;
+    padding-left:0.2rem;
+}           /* IE浏览器 */
+.send .content #tieCon::-webkit-input-placeholder{
+    font-size:0.14rem;
+    color:#999;
+    padding-left:0.2rem;
+}    /* 使用webkit内核的浏览器 */
+.send .content #tieCon:-moz-placeholder{
+    font-size:0.14rem;
+    color:#999;
+    padding-left:0.2rem;
+}                  /* Firefox版本4-18 */
+.send .content #tieCon::-moz-placeholder{
+    font-size:0.14rem;
+    color:#999;
+    padding-left:0.2rem;
+}                  /* Firefox版本19+ */
+.send .content #tieCon:-ms-input-placeholder{
+    font-size:0.14rem;
+    color:#999;
+    padding-left:0.2rem;
+} 
+.send .sendWrap{
+
+}
+.send .com_wrap .com_inp{
+    position: absolute;
+    top: 0.18rem;
+    width: 1rem;
+    height: 0.42rem;
+    border-radius: 0.21rem;
+    background: #fd6926;
+    border: none;
+    margin-left: 0.15rem;
+    outline: none;
+    text-align: center;
+    color: #dfff;
+    line-height: 0.42rem;
+}
+.send .topBar .fabu{
+    position: absolute;
+    top: 0.15rem;
+    right: 0.18rem;
+    color: #fd6926;
+    font-size: 0.16rem;
 }
 /* 发帖子 */
+/* 弹幕 */
+.danmu .baoming{
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width:100%;
+    height:0.5rem;
+    line-height: 0.5rem;
+    text-align: center;
+    padding-bottom:1rem;
+}
+.danmu .baoming span{
+    display: inline-block;
+    width:1rem;
+    height:0.5rem;
+    border-radius:0.5rem;
+    color:#fff;
+    text-align: center;
+    line-height: 0.5rem
+}
+.danmu .baoming span:first-of-type{
+    background: -webkit-linear-gradient(left,#f67751 ,#ee583c); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#f67751 ,#ee583c); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#f67751 ,#ee583c); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#f67751 ,#ee583c);
+}
+.danmu .baoming span:last-of-type{
+    background:#a5a5a5;
+     background: -webkit-linear-gradient(left,#ccc ,#a5a5a5); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#ccc ,#a5a5a5); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#ccc ,#a5a5a5); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#ccc ,#a5a5a5);
+}
+
+
+
+
+
+
+.danmu .bomb {
+    width: 3.5rem;
+    height: 380px;
+}
+.danmu .bomb_show {
+    height: 100%;
+    width: 100%;
+    margin: 10px;
+    border: 1px solid rgb(255,168,0);
+}
+.danmu  .send_bomb {
+    margin: 20px;
+    text-align: center;
+}
+.danmu  .b_txt {
+    width: 3.4rem;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+.danmu .btn_div {
+    margin-top: 10px;
+}
+.danmu .b_send {
+    border: 1px solid red;
+    color: red;
+    padding: 0;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    width: 200px;
+    background-color: white;
+    margin-bottom: 0.5rem;
+}
+.danmu .b_del {
+    border: 1px solid gray;
+    color: gray;
+    padding: 0;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    width: 200px;
+    background-color: white;
+}
+.danmu  div.text {
+    position: absolute;
+    right: 20px;
+    font-size: 15px;
+    white-space: nowrap;
+}

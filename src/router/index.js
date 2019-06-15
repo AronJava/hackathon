@@ -13,7 +13,7 @@ import technology from '@/components/post/children/technology'
 import postDetail from '@/components/postDetail'
 import error from '@/components/error'
 import mine from '@/components/mine/index'
-import slides from '@/components/post/slides'
+import danmu from '@/components/post/danmu'
 Vue.use(Router)
 
 export default new Router({
@@ -66,7 +66,10 @@ export default new Router({
         },{
           path:"technology",
           component: technology,
-        }
+        },{
+          path:"danmu",
+          component: danmu,
+        },
       ]
     },,{
       path:'/send',

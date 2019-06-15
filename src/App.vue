@@ -34,12 +34,11 @@ export default {
   name:"app",
   created() {
     this.getImg();
-    this.getLun();
   },
   data(){
     return {
       name:'left',
-      avator: '',
+      avator: 'https://cdn.duitang.com/uploads/item/201610/03/20161003000301_Wfm5X.jpeg',
       dataYang:'2019.06.15',
       dataYin:'农历五月十三'
     }
@@ -76,9 +75,9 @@ export default {
     getImg(){
       var that = this;
       // fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
-      fetchGet('/api/index/show').then(res=>{
-        this.avator = res.data.data.avatar;
-      })
+      // fetchGet('/api/index/show').then(res=>{
+      //   this.avator = res.data.data.avatar;
+      // })
     },
     noTop(){
       var top = document.getElementById("appTop");
