@@ -11,7 +11,7 @@
                 };
 
                 if (window["WebSocket"]) {
-                    conn = new WebSocket("ws://" + document.location.host + "/ws");
+                    conn = new WebSocket("ws://" + document.location.host + "/bulletscreen/ws");
                     conn.onmessage = function (evt) {
                         var message = evt.data;
                         var $spannode = $('<div class="text">'+message+'</div>');

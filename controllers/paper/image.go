@@ -7,10 +7,10 @@ import(
 )
 
 func GenerateImg(w http.ResponseWriter, r *http.Request) {
-	vars := r.URL.Query()
-	id := r.Header["User-ID"][0]
+	r.ParseForm()
+	id := r.Header["User-Id"][0]
 
-	img := vars.Get("img")
+	img := r.PostFormValue("img")
 	if img == "" {
 		utils.ResponseJson(w, -1, "img is invaild", nil)
 		return

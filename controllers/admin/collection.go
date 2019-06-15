@@ -11,7 +11,7 @@ import(
 )
 
 func Collection(w http.ResponseWriter, r *http.Request) {
-	id, _ := strconv.Atoi(r.Header["User-ID"][0])
+	id, _ := strconv.Atoi(r.Header["User-Id"][0])
 	userInfo, _ := user.GetInfo(id)
 
 	eventsId := strings.Split(userInfo.StorePaperID, ",")

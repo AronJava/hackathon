@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"log"
 	"net/http"
 
 
@@ -22,7 +23,7 @@ func main() {
 		http.HandleFunc(k, v)
 	}
 	fmt.Println("server start.")
-	http.ListenAndServe(":8089", nil)
+	log.Fatal(http.ListenAndServe(":8089", nil))
 }
 
 func middleWare(h http.HandlerFunc) http.HandlerFunc {
@@ -35,7 +36,7 @@ func middleWare(h http.HandlerFunc) http.HandlerFunc {
 		}
 
 		if id != nil {
-			r.Header.Add("User-ID", id.(string))
+			r.Header.Add("User-Id", id.(string))
 		}
 
 		h(w, r)
