@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="format-detection" content="telephone=no,email=no">
-    <title>弹幕</title>
+<html>
     <head>
         <script src="/static/jquery.min.js"></script>
         <script>
@@ -57,28 +50,23 @@
                     });
             };
         </script>
-        <script src="https://event.ncfwx.com/upload/file/20180727/16-17-flexible.js"></script>
         <style>
-            html,body{
-                height:100%;
-            }
             .bomb {
                 width: 100%;
-                height: 10rem;
+                height: 380px;
             }
             .bomb_show {
-                height: 10rem;
+                height: 100%;
                 width: 100%;
-                margin: 0 auto;
+                margin: 10px;
                 border: 1px solid rgb(255,168,0);
-                background: #f8f8f8;
             }
             .send_bomb {
                 margin: 20px;
                 text-align: center;
             }
             .b_txt {
-                width: 4rem;
+                width: 400px;
                 height: 40px;
                 border-radius: 3px;
                 border: 1px solid gray;
@@ -114,12 +102,6 @@
                 font-size: 15px;
                 white-space: nowrap;
             }
-            .send_bomb img{
-                position: absolute;
-                top: 8rem;
-                left: 0.2rem;
-                width: 3rem;
-            }
         </style>
     </head>
 
@@ -134,7 +116,6 @@
                     <input class="b_send" type="button" value="发射"/>
                     <input class="b_del" type="button" value="清屏"/>
                 </div>
-                <img src="https://event.ncfwx.com/upload/image/20190615/15-41-xinbao_03.png" alt="">
             </div>
         </div>
 
