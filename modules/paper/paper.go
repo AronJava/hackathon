@@ -10,7 +10,7 @@ type Event struct {
 	ID              int `xorm:"'id' notnull pk autoincr"`
 	Title           string
 	Content         string
-	UID             int `json:"uid"`
+	UID             int `xorm:"uid"`
 	Type            int
 	Img             string
 	EventStartTime  int
@@ -46,8 +46,11 @@ func Add(userID int, title, content string, eventType int, img string, eventStar
 	event.EventEndTime = eventEndTime
 	event.SignupStartTime = signupStartTime
 	event.SignupEndTime = signupEndTime
+	log.Println(89779)
 
-	utils.Engine.Insert(event)
+	affected, err := utils.Engine.Insert(event)
+	log.Printf("event. affected:%v, err:%v", affected, err)
+
 }
 
 // Update 添加活动
