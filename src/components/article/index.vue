@@ -19,13 +19,13 @@
       </div>
     </div>
     <div class="activity">
-      <div class="item btn2" @click="tiezi"><img src="../../assets/images/btn2_bg.png" alt=""><span>精彩活动</span></div>
-      <div class="item btn3"><img src="../../assets/images/btn3_bg.png" alt=""><span>日常生活</span></div>
-      <div class="item btn4"><img src="../../assets/images/btn4_bg.png" alt=""><span>技术大咖</span></div>
+      <div class="item btn2" @click="tiao('/post/wonActivity')"><img src="../../assets/images/btn2_bg.png" alt=""><span>精彩活动</span></div>
+      <div class="item btn3"  @click="tiao('/post/life')"><img src="../../assets/images/btn3_bg.png" alt=""><span>日常生活</span></div>
+      <div class="item btn4"  @click="tiao('/post/technology')"><img src="../../assets/images/btn4_bg.png" alt=""><span>技术大咖</span></div>
     </div>
     <div class="post_area">
 
-      <div class="post" >
+      <div class="post" @click="tiezi(1)">
         <div class="dian2"></div>
         <div class="content">
           <div class="text_area">
@@ -40,7 +40,7 @@
         </div>
       </div>
 
-      <div class="post" >
+      <div class="post" @click="tiezi(1)">
         <div class="dian3"></div>
         <div class="content">
           <div class="text_area">
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="post" >
+      <div class="post" @click="tiezi(1)">
         <div class="dian1"></div>
         <div class="content">
           <div class="text_area">
@@ -154,8 +154,11 @@ export default {
         this.avator = res.data.data.avatar;
       })
     },
-    tiezi(){
-
+    tiao(addre){
+      window.location.href=addre;
+    },
+    tiezi(param){
+      window.location.href="/postDetail?id="+param;
     },
     getLun(){
       // new Swiper('.swiper-container', {

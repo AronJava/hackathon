@@ -1,0 +1,286 @@
+.postDetail{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 11;
+    background: #fff;
+}
+.postDetail .topBar{
+    width:100%;
+    height:0.5rem;
+    background: #eee;
+}
+.postDetail .topBar .return{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    width: 0.15rem;
+    height: 0.15rem;
+    border-top: 1px solid #373737;
+    border-left: 1px solid #373737;
+    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+.postDetail .topBar .diandiandian{
+    position: absolute;
+    top: 0.14rem;
+    right: 0.2rem;
+    width: 0.336rem;
+    height: 0.224rem;
+    background: url(../images/diandiandian.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+.postDetail .content{
+    position: relative;
+}
+.postDetail .content .detail_disc {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 3.6rem;
+    height: 0.8rem;
+    border-bottom: 0.01rem solid #eee;
+}
+.postDetail .content .detail_disc .avatar{
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 0.29rem;
+    box-shadow: 0 0.05rem 0.1rem #ccc inset;
+    -webkit-box-shadow: 0 0.05rem 0.1rem #ccc inset;
+    top: 0.15rem;
+    left: 0.15rem;
+    border: 0.01rem solid #eee;
+}
+.postDetail .content .detail_disc .right{
+    width: 3rem;
+    float: right;
+    margin-top: 0.26rem;
+}
+.postDetail .content .detail_disc .right .author{
+    font-size: 0.14rem;
+    color: #333;
+    margin-left: 0.15rem;
+}
+.postDetail .content .detail_disc .right .diTime{
+    font-size: 0.1rem;
+    color: #fa4619;
+    margin-left: 0.15rem;
+}
+.postDetail .content .title{
+    font-size: 0.14rem;
+    color: #333;
+    width: 3.4rem;
+    text-indent: 2em;
+    text-align: center;
+    margin: 0.3rem auto;
+}
+.postDetail .content .text_content{
+    font-size: 0.14rem;
+    color: #333;
+    width: 3.4rem;
+    text-indent: 2em;
+    border-bottom: 0.01rem solid #eee;
+    text-align: center;
+    margin: 0 auto;
+}
+.postDetail .content .newsImg{
+    width: 3.4rem;
+    margin: 0.4rem auto;
+}
+.postDetail .tuijian {
+    width: 100%;
+    height: auto;
+}
+.postDetail .tuijian .tujian_bar{
+    margin: 0 auto;
+    width: 3.5rem;
+    height: 0.35rem;
+    padding-top: 0.3rem;
+}
+.postDetail .tuijian .text1{
+    font-size: 0.16rem;
+    color: #333;
+}
+.postDetail .tuijian .text2{
+    font-size: 0.1rem;
+    color: #fa4619;
+}
+.postDetail .tuijian .text3{
+    font-size: 0.12rem;
+    color: #333;
+    margin-left: 1.5rem;
+    border-bottom: 0.02rem solid #fa4619;
+}
+
+/* 帖子 */
+.tuijian_tiezi{
+    width: 100%;
+    height: 3.2rem;
+    background: #eee;
+    padding-top: 0.01rem;
+}
+ .post{
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 3.6rem;
+    height: 0.85rem;
+    border-radius: 0.08rem;
+    -webkit-box-shadow: 0rem 0.05rem 0.05rem #ccc;
+    box-shadow: 0rem 0.05rem 0.05rem #ccc;
+    margin-top:0.15rem;
+    background:#fff;
+}
+ .bg_gonggao{
+    background: -webkit-linear-gradient(left,#f67751 ,#ee583c); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#f67751 ,#ee583c); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#f67751 ,#ee583c); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#f67751 ,#ee583c); /* 标准的语法 */
+}
+ .post .dian1{
+    width: 0.06rem;
+    height: 0.06rem;
+    background: #ffd300;
+    position: absolute;
+    top: 0.05rem;
+    left: 0.05rem;
+    border-radius: 0.03rem;
+    box-shadow: 0 0.02rem 0.05rem #ffd300;
+}
+ .post .dian2{
+    width: 0.06rem;
+    height: 0.06rem;
+    position: absolute;
+    top: 0.05rem;
+    left: 0.05rem;
+    border-radius: 0.03rem;
+    background:#fc743b;
+    box-shadow: 0 0.02rem 0.05rem #fc743b;
+}
+ .post .dian3{
+    width: 0.06rem;
+    height: 0.06rem;
+    position: absolute;
+    top: 0.05rem;
+    left: 0.05rem;
+    border-radius: 0.03rem;
+    background:#4daafb;
+    box-shadow: 0 0.02rem 0.05rem #4daafb;
+}
+ .post .content{
+    display: flex;
+}
+ .post .text_area{
+    flex: 2;
+    margin: 0.15rem;
+}
+ .post .pic_area{
+    flex: 1;
+    width: 1rem;
+    height: 0.7rem;
+    margin-top: 0.065rem;
+    margin-right: 0.065rem;
+}
+ .post .text_area .text_disc{
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+ .post .text_area .time{
+    position: absolute;
+    left:0.15rem;
+    bottom:0.15rem;
+    color:#b0b0b0;
+}
+ .post .text_area .time_gonggao{
+    color:#fff;
+}
+ .post .text_area .huifu{
+    float: right;
+    margin-top: 0.06rem;
+}
+ .post .text_area .huifu img{
+    width:0.24rem;
+}
+ .bottom{
+    width: 3.6rem;
+    height: 1rem;
+}
+/* 帖子 */
+.postDetail .comment{
+
+}
+.postDetail .comment .com_til{
+    width: 1rem;
+    text-align: center;
+    margin: 0.25rem auto;
+}
+.postDetail .comment .com_til .com_text{
+    font-size:0.2rem;
+    color:#333;
+}
+.postDetail .comment .com_til .com_num{
+    font-size:0.12rem;
+    color:#fc743b;
+}
+.postDetail .comment .com_area{
+    width:100%;
+    padding-bottom: 0.8rem;
+}
+.postDetail .comment .com_area .com_item{
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width:3.5rem;
+    border-bottom: 0.01rem solid #eee;
+}
+.postDetail .comment .com_area .com_item .top .avatar{
+    position: unset;
+    width:0.5rem;
+    height:0.5rem;
+    border-radius:0.25rem;
+    box-shadow: 0 0.05rem 0.1rem #ccc;
+    float:left;
+}
+.postDetail .comment .com_area .com_item .top .author{
+    display: inline-block;
+    color: #999;
+    font-size: 0.16rem;
+    margin-left: 0.1rem;
+    padding-top: 0.12rem;
+}
+.postDetail .comment .com_area .com_item .top .content_text{
+    margin-left: 0.6rem;
+    margin-top: 0.1rem;
+    color: #333;
+}
+.postDetail .comment .com_area .com_item .top .com_time{
+    color:#ccc;
+    margin-left: 0.6rem;
+    margin-top: 0.15rem;
+    margin-bottom:0.15rem;
+}
+.postDetail .com_wrap{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.8rem;
+    border-top: 1px solid #eee;/*no*/
+    background: #fff;
+    z-index: 10;
+}
+.postDetail .com_wrap .com_inp{
+    width:1.85rem;
+    height:0.43rem;
+}

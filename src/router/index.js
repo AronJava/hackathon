@@ -10,6 +10,7 @@ import work from '@/components/activity/children/work'
 import wonActivity from '@/components/post/children/wonActivity'
 import life from '@/components/post/children/life'
 import technology from '@/components/post/children/technology'
+import postDetail from '@/components/postDetail'
 import error from '@/components/error'
 import mine from '@/components/mine/index'
 import slides from '@/components/post/slides'
@@ -118,6 +119,17 @@ export default new Router({
     //       return "/home";
     //     }
     //   }
-    }
+    },
+    {
+      path: '/postDetail',
+      name:"postDetail",
+      component: postDetail,
+      beforeEnter(to,from,next){
+        next();
+      },
+      meta:{
+        index:0
+      }
+    },
   ]
 })
