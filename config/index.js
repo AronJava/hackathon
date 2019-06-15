@@ -10,7 +10,14 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      "/api": { // 系统管理的所有模块包括 登录 登出 修改密码 全部是走这个路由
+            target: "http://10.20.69.57:8089",
+            pathRewrite: {"^/api": ""},
+            secure: false,
+            changeOrigin: true
+        }
+    },
 
     // Various Dev Server settings
     host: '0.0.0.0', // can be overwritten by process.env.HOST

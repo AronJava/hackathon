@@ -118,13 +118,13 @@
 }
 
 /* 帖子 */
-.tuijian_tiezi{
+.postDetail .tuijian .tuijian_tiezi{
     width: 100%;
     height: 3.2rem;
     background: #eee;
     padding-top: 0.01rem;
 }
- .post{
+.postDetail .tuijian .tuijian_tiezi .post{
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -137,13 +137,13 @@
     margin-top:0.15rem;
     background:#fff;
 }
- .bg_gonggao{
+.postDetail .tuijian .tuijian_tiezi .bg_gonggao{
     background: -webkit-linear-gradient(left,#f67751 ,#ee583c); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(left,#f67751 ,#ee583c); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(left,#f67751 ,#ee583c); /* Firefox 3.6 - 15 */
     background: linear-gradient(left,#f67751 ,#ee583c); /* 标准的语法 */
 }
- .post .dian1{
+.postDetail .tuijian .tuijian_tiezi .post .dian1{
     width: 0.06rem;
     height: 0.06rem;
     background: #ffd300;
@@ -153,7 +153,7 @@
     border-radius: 0.03rem;
     box-shadow: 0 0.02rem 0.05rem #ffd300;
 }
- .post .dian2{
+.postDetail .tuijian .tuijian_tiezi .post .dian2{
     width: 0.06rem;
     height: 0.06rem;
     position: absolute;
@@ -163,7 +163,7 @@
     background:#fc743b;
     box-shadow: 0 0.02rem 0.05rem #fc743b;
 }
- .post .dian3{
+.postDetail .tuijian .tuijian_tiezi .post .dian3{
     width: 0.06rem;
     height: 0.06rem;
     position: absolute;
@@ -173,21 +173,21 @@
     background:#4daafb;
     box-shadow: 0 0.02rem 0.05rem #4daafb;
 }
- .post .content{
+.postDetail .tuijian .tuijian_tiezi .post .content{
     display: flex;
 }
- .post .text_area{
+.postDetail .tuijian .tuijian_tiezi .post .text_area{
     flex: 2;
     margin: 0.15rem;
 }
- .post .pic_area{
+.postDetail .tuijian .tuijian_tiezi .post .pic_area{
     flex: 1;
     width: 1rem;
     height: 0.7rem;
     margin-top: 0.065rem;
     margin-right: 0.065rem;
 }
- .post .text_area .text_disc{
+.postDetail .tuijian .tuijian_tiezi .post .text_area .text_disc{
     word-break: break-all;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -195,28 +195,27 @@
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
- .post .text_area .time{
+.postDetail .tuijian .tuijian_tiezi .post .text_area .time{
     position: absolute;
     left:0.15rem;
     bottom:0.15rem;
     color:#b0b0b0;
 }
- .post .text_area .time_gonggao{
+.postDetail .tuijian .tuijian_tiezi .post .text_area .time_gonggao{
     color:#fff;
 }
- .post .text_area .huifu{
+.postDetail .tuijian .tuijian_tiezi .post .text_area .huifu{
     float: right;
     margin-top: 0.06rem;
 }
- .post .text_area .huifu img{
+.postDetail .tuijian .tuijian_tiezi .post .text_area .huifu img{
     width:0.24rem;
 }
  .bottom{
     width: 3.6rem;
     height: 1rem;
 }
-/* 帖子 */
-.postDetail .comment{
+/* 帖子 */.postDetail .tuijian .tuijian_tiezi .postDetail .comment{
 
 }
 .postDetail .comment .com_til{
@@ -279,8 +278,70 @@
     border-top: 1px solid #eee;/*no*/
     background: #fff;
     z-index: 10;
+    line-height: 0.8rem;
 }
 .postDetail .com_wrap .com_inp{
-    width:1.85rem;
-    height:0.43rem;
+    position: absolute;
+    top: 0.18rem;
+    width: 1.85rem;
+    height: 0.42rem;
+    border-radius: 0.21rem;
+    background: #eee;
+    border: none;
+    margin-left: 0.15rem;
+    outline: none;
 }
+.postDetail .com_wrap .com_inp::-webkit-input-placeholder{
+    padding-left:0.2rem;
+}    /* 使用webkit内核的浏览器 */
+.postDetail .com_wrap .com_inp:-moz-placeholder{
+    padding-left:0.2rem;
+}                  /* Firefox版本4-18 */
+.postDetail .com_wrap .com_inp::-moz-placeholder{
+    padding-left:0.2rem;
+}                  /* Firefox版本19+ */
+.postDetail .com_wrap .com_inp:-ms-input-placeholder{
+    padding-left:0.2rem;
+}           /* IE浏览器 */
+.postDetail .com_wrap .bg{
+    display: inline-block;
+    width:0.27rem;
+    height:0.31rem;
+}
+.postDetail .com_wrap .bg .bg_img{
+    position: absolute;
+    top:0.18rem;
+    display: inline-block;
+    width:0.27rem;
+    height:0.31rem;
+}
+.postDetail .com_wrap .bg_huifu {
+    right:1.2rem;
+    background:url(../images/detail1.png);
+    background-size:100% 100%;
+}
+.postDetail .com_wrap .bg_shoucang{
+    right:0.8rem;
+    background:url(../images/detail2.png);
+    background-size:100% 100%;
+}
+.postDetail .com_wrap .bg_share{
+    right:0.4rem;
+    background:url(../images/detail3.png);
+    background-size:100% 100%;
+}
+
+
+/* 发帖子 */
+.send .topBar{
+    background: #fff;
+}
+.send .content{
+    background:#eee;
+}
+.send .tieTitle{
+    width: 100%;
+    outline: none;
+    border: none;
+}
+/* 发帖子 */

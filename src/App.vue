@@ -75,7 +75,8 @@ export default {
     // }
     getImg(){
       var that = this;
-      fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
+      // fetchGet('https://www.easy-mock.com/mock/5d031cab0916f02402ce982b/jike/api/toutiao').then(res=>{
+      fetchGet('/api/index/show').then(res=>{
         this.avator = res.data.data.avatar;
       })
     },
