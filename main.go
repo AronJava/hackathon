@@ -28,6 +28,8 @@ func main() {
 
 func middleWare(h http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Add("Access-Control-Allow-Headers", "Content-Type")
 		s, _ := session.Store.Get(r, "session_name")
 		id := s.Values["userid"]
 		if r.RequestURI != "/account/login" && id == nil {
